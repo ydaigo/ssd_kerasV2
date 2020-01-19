@@ -135,7 +135,7 @@ def SSD(input_shape, num_classes=21):
     if num_classes != 21:
         name += '_{}'.format(num_classes)
     pool6_mbox_conf_flat = Dense(num_priors * num_classes, name=name)(pool6)
-    if K.image_dim_ordering() == 'tf':
+    if K.common.image_dim_ordering() == 'tf':
         target_shape = (1, 1, 256)
     else:
         target_shape = (256, 1, 1)
