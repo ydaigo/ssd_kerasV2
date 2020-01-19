@@ -29,7 +29,7 @@ class Normalize(Layer):
         Add possibility to have one scale for all features.
     """
     def __init__(self, scale, **kwargs):
-        if K.common._dim_ordering() == 'tf':
+        if K.common.image_dim_ordering() == 'tf':
             self.axis = 3
         else:
             self.axis = 1
