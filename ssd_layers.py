@@ -29,7 +29,8 @@ class Normalize(Layer):
         Add possibility to have one scale for all features.
     """
     def __init__(self, scale, **kwargs):
-        if K.common.image_dim_ordering() == 'tf':
+        if K.common.
+        _dim_ordering() == 'tf':
             self.axis = 3
         else:
             self.axis = 1
@@ -81,7 +82,7 @@ class PriorBox(Layer):
     """
     def __init__(self, img_size, min_size=None, max_size=None, aspect_ratios=None,
                  flip=True, variances=[0.1], clip=True, **kwargs):
-        if K.image_dim_ordering() == 'tf':
+        if K.common.image_dim_ordering() == 'tf':
             self.waxis = 2
             self.haxis = 1
         else:
